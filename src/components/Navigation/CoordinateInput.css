@@ -1,0 +1,75 @@
+.coordinate-input {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+}
+
+.coord-label {
+  font-size: 11px;
+  color: #888;
+  white-space: nowrap;
+}
+
+.coord-field {
+  display: flex;
+  align-items: center;
+  background: #1e1e1e;
+  border: 1px solid #444;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.coord-prefix {
+  padding: 2px 4px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #888;
+  background: #2d2d2d;
+  border-right: 1px solid #444;
+}
+
+.coord-input {
+  width: 60px;
+  padding: 2px 4px;
+  border: none;
+  background: transparent;
+  color: #ddd;
+  font-family: "SF Mono", "Menlo", "Monaco", monospace;
+  font-size: 11px;
+  outline: none;
+}
+
+.coord-input:focus {
+  background: #2a2a2a;
+}
+
+/* Hide number input spin buttons */
+.coord-input::-webkit-outer-spin-button,
+.coord-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.coord-input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.coord-go-btn {
+  padding: 2px 8px;
+  background: #0e639c;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 11px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.coord-go-btn:hover {
+  background: #1177bb;
+}
+
+.coord-go-btn:active {
+  background: #0d5689;
+}

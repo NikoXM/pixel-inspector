@@ -1,0 +1,239 @@
+.inspector-panel {
+  width: 260px;
+  min-width: 260px;
+  background: #252526;
+  border-left: 1px solid #333;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+
+.inspector-header {
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ccc;
+  border-bottom: 1px solid #333;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.inspector-empty {
+  padding: 20px 12px;
+  color: #666;
+  font-size: 12px;
+  text-align: center;
+}
+
+.inspector-section {
+  padding: 8px 12px;
+  border-bottom: 1px solid #2d2d2d;
+}
+
+.section-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 0;
+  font-size: 12px;
+}
+
+.info-label {
+  color: #888;
+}
+
+.info-value {
+  color: #ddd;
+  font-family: "SF Mono", "Menlo", "Monaco", monospace;
+  font-size: 11px;
+}
+
+.hdr-badge {
+  background: #4a3600;
+  color: #ffa500;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+}
+
+.color-preview-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.color-swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background-image:
+    linear-gradient(45deg, #666 25%, transparent 25%),
+    linear-gradient(-45deg, #666 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #666 75%),
+    linear-gradient(-45deg, transparent 75%, #666 75%);
+  background-size: 8px 8px;
+  background-position: 0 0, 0 4px, 4px -4px, -4px 0;
+  position: relative;
+}
+
+.color-swatch::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 3px;
+  background: inherit;
+}
+
+.color-hex {
+  font-family: "SF Mono", "Menlo", "Monaco", monospace;
+  font-size: 12px;
+  color: #ddd;
+}
+
+.rgba-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+.rgba-cell {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 6px;
+  border-radius: 3px;
+  background: #1e1e1e;
+  font-size: 11px;
+}
+
+.rgba-cell.r .channel-label { color: #ff6b6b; }
+.rgba-cell.g .channel-label { color: #51cf66; }
+.rgba-cell.b .channel-label { color: #339af0; }
+.rgba-cell.a .channel-label { color: #aaa; }
+
+.channel-label {
+  font-weight: 600;
+  font-size: 10px;
+}
+
+.channel-value {
+  font-family: "SF Mono", "Menlo", "Monaco", monospace;
+  color: #ddd;
+  font-size: 11px;
+}
+
+/* Multi-pixel entry */
+.pixel-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pixel-entry-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.pixel-entry-coord {
+  font-family: "SF Mono", "Menlo", "Monaco", monospace;
+  font-size: 11px;
+  color: #ff8800;
+  font-weight: 600;
+}
+
+.pixel-entry-label {
+  font-size: 11px;
+  color: #888;
+}
+
+.pixel-remove-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  padding: 0 4px;
+  border-radius: 3px;
+}
+
+.pixel-remove-btn:hover {
+  color: #ff4444;
+  background: rgba(255, 68, 68, 0.1);
+}
+
+.rgba-float {
+  margin-top: 2px;
+}
+
+.rgba-hdr {
+  margin-top: 2px;
+}
+
+.section-coord {
+  font-family: "SF Mono", "Menlo", "Monaco", monospace;
+  font-size: 10px;
+  color: #51cf66;
+  margin-left: 6px;
+  font-weight: 400;
+}
+
+.section-count {
+  font-family: "SF Mono", "Menlo", "Monaco", monospace;
+  font-size: 10px;
+  color: #ff8800;
+  background: rgba(255, 136, 0, 0.15);
+  padding: 0 5px;
+  border-radius: 3px;
+  margin-left: 6px;
+  font-weight: 400;
+}
+
+.clear-all-btn {
+  margin-left: auto;
+  background: none;
+  border: 1px solid #444;
+  color: #888;
+  cursor: pointer;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+.clear-all-btn:hover {
+  color: #ddd;
+  border-color: #666;
+}
+
+.inspector-empty-inline {
+  color: #555;
+  font-size: 11px;
+  padding: 4px 0;
+}
+
+.multi-pixel-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.multi-pixel-list .pixel-entry {
+  padding: 6px;
+  background: #1e1e1e;
+  border-radius: 4px;
+  border-left: 2px solid #ff8800;
+}
