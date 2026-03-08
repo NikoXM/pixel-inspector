@@ -75,6 +75,14 @@ npm run tauri build
 
 Build outputs are located in `src-tauri/target/release/bundle/` — includes platform-specific installers (`.exe`/`.msi` on Windows, `.dmg` on macOS, `.deb`/`.AppImage` on Linux).
 
+## macOS Installation Note
+
+The app is not signed with an Apple Developer certificate. macOS may show "app is damaged" when you try to open it. Run this command to fix it:
+
+```bash
+xattr -cr /Applications/Pixel\ Inspector.app
+```
+
 ## License
 
 MIT
