@@ -1,88 +1,88 @@
 # Pixel Inspector
 
-A desktop application for inspecting individual pixel RGBA values in images. Built with **Tauri 2** (Rust backend + React frontend).
+一款用于查看图片每个像素 RGBA 值的桌面应用。基于 **Tauri 2**（Rust 后端 + React 前端）构建。
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-## Features
+## 功能特性
 
-- **Pixel-level inspection** — Click any pixel to view its RGBA values in multiple formats (0–255, 0.0–1.0, HDR raw)
-- **Coordinate navigation** — Jump to any pixel by entering X/Y coordinates
-- **Keyboard navigation** — Arrow keys to move cursor, Shift+Arrow for 10px steps
-- **Multi-pixel selection** — Ctrl/Cmd+Click to select multiple pixels and compare values side by side
-- **Zoom & Pan** — Mouse wheel to zoom (0.1x–256x), drag to pan
-- **Pixel grid** — Auto-displayed grid lines at ≥8x zoom
-- **Crosshair overlay** — Visual indicator on the selected pixel
-- **Checkerboard background** — Visualize transparent areas
-- **HDR support** — Tone mapping (Linear/Reinhard/ACES/AgX) with exposure control (-10 to +10 stops)
-- **Wide format support** — PNG, JPEG, GIF, BMP, TGA, TIFF, WebP, OpenEXR, Radiance HDR, DDS, PSD/PSB
+- **像素级检查** — 点击任意像素，以多种格式查看 RGBA 值（0–255、0.0–1.0、HDR 原始值）
+- **坐标导航** — 输入 X/Y 坐标快速跳转到指定像素
+- **键盘导航** — 方向键移动光标，Shift+方向键每次移动 10 像素
+- **多选像素** — Ctrl/Cmd+点击选择多个像素，并排对比数值
+- **缩放与平移** — 滚轮缩放（0.1x–256x），拖拽平移画布
+- **像素网格** — 缩放≥8x 时自动显示网格线
+- **十字准星** — 选中像素的视觉指示器
+- **棋盘格背景** — 可视化透明区域
+- **HDR 支持** — 色调映射（Linear/Reinhard/ACES/AgX）+ 曝光控制（-10 到 +10 档）
+- **广泛格式支持** — PNG、JPEG、GIF、BMP、TGA、TIFF、WebP、OpenEXR、Radiance HDR、DDS、PSD/PSB
 
-## Supported Image Formats
+## 支持的图片格式
 
-| Format | Extensions |
-|--------|-----------|
+| 格式 | 扩展名 |
+|------|--------|
 | PNG | `.png` |
-| JPEG | `.jpg`, `.jpeg` |
+| JPEG | `.jpg`、`.jpeg` |
 | GIF | `.gif` |
 | BMP | `.bmp` |
 | TGA | `.tga` |
-| TIFF | `.tiff`, `.tif` |
+| TIFF | `.tiff`、`.tif` |
 | WebP | `.webp` |
 | OpenEXR | `.exr` |
 | Radiance HDR | `.hdr` |
 | DirectDraw Surface | `.dds` |
-| Photoshop | `.psd`, `.psb` |
+| Photoshop | `.psd`、`.psb` |
 
-## Keyboard Shortcuts
+## 快捷键
 
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl/Cmd + O` | Open image file |
-| `Arrow Keys` | Move cursor by 1 pixel |
-| `Shift + Arrow Keys` | Move cursor by 10 pixels |
-| `Home` | Jump to (0, 0) |
-| `End` | Jump to bottom-right corner |
-| `Escape` | Clear all selected pixels |
-| `Ctrl/Cmd + Click` | Toggle multi-select pixel |
+| 快捷键 | 功能 |
+|--------|------|
+| `Ctrl/Cmd + O` | 打开图片文件 |
+| `方向键` | 移动光标 1 像素 |
+| `Shift + 方向键` | 移动光标 10 像素 |
+| `Home` | 跳转到 (0, 0) |
+| `End` | 跳转到右下角 |
+| `Escape` | 清除所有选中像素 |
+| `Ctrl/Cmd + 点击` | 多选/取消选中像素 |
 
-## Tech Stack
+## 技术栈
 
-- **Backend**: Rust + Tauri 2
-- **Frontend**: React 19 + TypeScript + Vite 7
-- **State Management**: Zustand
-- **Image Processing**: `image` crate, `exr`, `ddsfile` (all decoding in Rust)
+- **后端**：Rust + Tauri 2
+- **前端**：React 19 + TypeScript + Vite 7
+- **状态管理**：Zustand
+- **图像处理**：`image` crate、`exr`、`ddsfile`（全部在 Rust 端解码）
 
-## Development
+## 开发
 
-### Prerequisites
+### 环境要求
 
-- [Node.js](https://nodejs.org/) (v18+)
-- [Rust](https://rustup.rs/) (stable)
-- Tauri system dependencies ([see Tauri docs](https://v2.tauri.app/start/prerequisites/))
+- [Node.js](https://nodejs.org/)（v18+）
+- [Rust](https://rustup.rs/)（stable）
+- Tauri 系统依赖（[参见 Tauri 文档](https://v2.tauri.app/start/prerequisites/)）
 
-### Setup
+### 启动开发
 
 ```bash
 npm install
 npm run tauri dev
 ```
 
-### Build
+### 构建
 
 ```bash
 npm run tauri build
 ```
 
-Build outputs are located in `src-tauri/target/release/bundle/` — includes platform-specific installers (`.exe`/`.msi` on Windows, `.dmg` on macOS, `.deb`/`.AppImage` on Linux).
+构建产物位于 `src-tauri/target/release/bundle/`，包含各平台安装包（Windows `.exe`/`.msi`、macOS `.dmg`、Linux `.deb`/`.AppImage`）。
 
-## macOS Installation Note
+## macOS 安装说明
 
-The app is not signed with an Apple Developer certificate. macOS may show "app is damaged" when you try to open it. Run this command to fix it:
+本应用未使用 Apple 开发者证书签名。macOS 可能提示"应用已损坏"，运行以下命令即可解决：
 
 ```bash
 xattr -cr /Applications/Pixel\ Inspector.app
 ```
 
-## License
+## 许可证
 
 MIT
